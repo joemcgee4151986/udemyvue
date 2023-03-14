@@ -1,0 +1,299 @@
+<!---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ name.split(' ')[1]}}</h1>
+    </div>
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        el: "#app",
+        data: {
+          age: 36,
+          name: "Yes Yep",
+        },
+      });
+    </script>
+  </body>
+  Section 2 Lesson 7
+</html>-->
+<!--
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{getFullName(firstName, lastName)}}</h1>
+    </div>
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        el: "#app",
+        data: {
+          age: 37,
+          firstName: "John",
+          lastName: "Smith",
+        },
+        methods: {
+          getFullName: function (first, last) {
+            return first + " " + last;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
+section 2 lesson 8 practice
+-->
+<!---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ getFullName(firstName, lastName).name}}</h1>
+    </div>
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        el: "#app",
+        data: {
+          firstName: "Yes",
+          lastName: "Yep",
+        },
+        methods: {
+          getFullName: function (first, last) {
+            return {
+              name: first + " " + last,
+            };
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
+Section 2 Lesson 8
+-->
+<!--
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div id="app">
+      <a v-bind:href="blogUrl"> Visit here now!</a>
+    </div>
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        el: "#app",
+        data: {
+          blogUrl: "http://www.reddit.com",
+        },
+      });
+    </script>
+  </body>
+</html>
+Section 2 lesson 10
+-->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div id="app">
+      <a v-bind:href="blog">Visit</a>
+    </div>
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        el: "#app",
+        data: {
+          blog: "http://www.reddit.com",
+        },
+      });
+    </script>
+  </body>
+</html>
+section 2 unit 10 practice
+-->
+<!--
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div id="app">
+        <h1>{{age > 25 ?'old': 'young'}}</h1>
+        <script src="vue.js"></script>
+        <script type="text/javascript">
+          new Vue({
+            el: "#app",
+            data: {
+              age: 30
+            },
+          });
+        </script>
+      </body>
+    </html>
+
+-->
+<!--
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div id="app">
+<h1>{{age < 33 ? 'This movie is old!': 'This movie is young!' }}</h1>
+        <script src="vue.js"></script>
+        <script type="text/javascript">
+          new Vue({
+            el: "#app",
+            data: {
+              age: 23
+            },
+          });
+        </script>
+      </body>
+    </html>
+
+    exercise 2
+    -->
+<!--
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>title: {{ title }}</p>
+      <p>released: {{released}}</p>
+      <h1>This movie is {{released ? 'old' : 'new'}}</h1>
+      <div v-bind:title="title">Hover your mouse here right now!</div>
+    </div>
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        el: "#app",
+        data: {
+          title: "The Matrix",
+          released: 1999,
+        },
+        methods: {
+          isMovieOld: function (released) {
+            return released < 2000;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
+-->
+
+<!--
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div id="app">
+            <div v-bind:title="firstName + ' ' + lastName">See my name</div>
+
+        <script src="vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        el: "#app",
+        data: {
+            firstName: "John",
+            lastName: "Smith",
+        },
+        },
+      );
+    </script>
+  </body>
+</html>
+section 2 lesson 12
+-->
+<!--
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div id="app">
+      <button v-on:click="clickedButton('Click this button now!',$event)">
+        Click this button!!!!!
+      </button>
+    </div>
+
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        el: "#app",
+        methods: {
+          clickedButton: function (message, event) {
+            console.log(event);
+            alert(message);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
+section 2 lesson 14
+-->
+<!--
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+
+  <div id="app">
+    <input type="text" v-on:keyup.enter.space="pressedAKey" / >
+  </div>
+  <script src="vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: "#app",
+      methods: {
+        pressedAKey: function () {
+          alert("You pressed either the enter or space key");
+        },
+      },
+    });
+  </script>
+</html>
+section 2 lesson 16
+-->
+
+
+<div id="app">
+    <input type="text" v-on:keyup.enter.space="pressedAKey" / >
+  </div>
+<script src="vue.js"></script>
+  <script type="text/javascript">
+    
