@@ -410,7 +410,7 @@ section 2 lesson 20
 lesson 22
 
 -->
-
+<!--
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -426,6 +426,138 @@ lesson 22
         el: "#app",
         data: {
           isAPerson: false,
+        },
+      });
+    </script>
+  </div>
+</html>
+lesson 23... This could be use for the menu to pop in and out
+-->
+<!--
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <div id="app">
+    <h1>v-cloak example</h1>
+    <h1 v-cloak>{{message}}</h1>
+
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+      setTimeout(function () {
+        new Vue({
+          el: "#app",
+          data: {
+            message: "Hello!",
+          },
+        });
+      }, 5000);
+    </script>
+  </div>
+</html>
+<style>
+  [v-cloak] {
+    display: none;
+  }
+</style>
+lesson 24... v-cloak prevents the screen from flickering
+-->
+<!--
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <div v-cloak id="app">
+    <h1>Movies</h1>
+    <ul>
+      <li v-for="title in movieTitles">{{title}}</li></li> 
+    </ul>
+    <h1>Employees</h1>
+  
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Title</th>
+          <th>Company</th>
+          <th>Index</th>
+        </tr>
+      </thead>
+      <tbody>  
+        <tr v-for="(employee, index) in employees"> loop-->
+<!---
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.title }}</td>
+          <td>{{ companyName }}</td>
+          <td>{{index}}</td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+      
+      new Vue({
+        el: "#app",
+        data: {
+            movieTitles: [' Blah', 'Blah 2', 'Blah 3'],
+            employees: [
+              {name: 'John', title: 'Janitor'},
+              {name: 'Jack', title: 'Cleaner'}
+            ],
+            companyName: 'Vuex'
+        },
+      });
+    </script>
+  </div>
+</html>
+lesson 26
+-->
+<!--
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <div v-cloak id="app">
+    <ul>
+      <li v-for="(n, index) in 10">{{n}} * {{index}} = {{ n* index}}</li>
+    </ul>
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        el: "#app",
+      });
+    </script>
+  </div>
+</html>
+-->
+<!--do section 2 lesson 29, 30, 31,32,33,34,35,36 from 3:50,38,39 later-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <div v-cloak id="app">
+    <h1>{{message | uppercase }}</h1>
+    </div>
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        el: "#app",
+        data: {
+          message: "Hello",
+        },
+        filters: {
+          toUpperCase: function (value) {
+            if (!value) {
+              return "";
+            }
+            return value.toString().toUpperCase();
+          },
         },
       });
     </script>
