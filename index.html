@@ -289,7 +289,145 @@ section 2 lesson 14
 </html>
 section 2 lesson 16
 -->
+<!---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
 
-<div id="app"><input type="text" v-on:keyup.enter.space="pressedAKey" / ></div>
+  <div id="app">
+    <input type="text" v-on:keyup.ctrl.enter="name = $event.target.value" /> output: {{
+    name }}
+    <br></br>
+    <form action="" method="GET" v-on:submit.prevent>
+      <input type = "submit" value="submit">
+    </form>
+  </div>
+
+  <script src="vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: "#app",
+      data: {
+        name: "",
+      },
+      methods: {
+        nameKeyup: function (event) {
+          this.name = event.target.value;
+        },
+      },
+    });
+  </script>
+</html>
+section 2 lesson 18
+-->
+<!--
+<div id="app">
+  <input type="text" v-model.number.lazy.enter="age" />
+  <p>You typed: {{age}}</p>
+  <p>Type: {{typeof age}}</p>
+</div>
+
 <script src="vue.js"></script>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+  new Vue({
+    el: "#app",
+    data: {
+      name: "",
+      age: "",
+    },
+  });
+</script>
+-->
+<!--
+<script src="vue.js"></script>
+<script type="text/javascript">
+  <div id="app">
+    <div v-html="html"></div>
+  </div>;
+
+  new Vue({
+    el: "#app",
+    data: {
+      html: "<h1>Hello</h1>",
+    },
+  });
+</script>
+section 2 lesson 20
+-->
+<!--
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+
+  <div id="app">
+    <h1 v-once>{{ movieName }}</h1>
+    <button v-on:click="movieName = 'This is a movie'">
+      Change movie name
+    </button>
+  </div>
+
+  <script src="vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: "#app",
+      data: {
+        movieName: "Blah Blah",
+      },
+    });
+  </script>
+</html>
+-->
+<!--
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <div id="app">
+    <p v-if="itemsInStock > 10">{{itemsInStock}} in stock</p>
+    <p v-else-if="itemsInStock > 0">Buy now!</p>
+    <p v-else>We are all out!</p>
+    <template v-if="itemsInStock > 50">
+      <p>Sale!</p>
+      <p>Save a lot of money!</p>
+    </template>
+  </div>
+
+  <script src="vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: "#app",
+      data: {
+        itemsInStock: 1,
+      },
+    });
+  </script>
+</html>
+lesson 22
+
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <div id="app">
+    <p v-show="isAPerson">I am here</p>
+    <p v-show="!isAPerson">I'm working!</p>
+    <button v-on:click="isAPerson = !isAPerson">Toggle</button>
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        el: "#app",
+        data: {
+          isAPerson: false,
+        },
+      });
+    </script>
+  </div>
+</html>
